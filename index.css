@@ -1,0 +1,38 @@
+* {
+    background-color: rgb(95, 129, 73);
+}
+
+
+a {
+    display: inline;
+    text-decoration: none;
+    text-align: center;
+    text-justify: auto;
+}
+
+
+nav {
+    padding: 1em;
+}
+
+nav a {
+    color: aquamarine;
+    padding:1em;
+    border: thin solid black;
+}
+
+
+main {
+    margin: 2em;
+    border: thick solid black;
+}
+
+footer {
+    background-color: #c0dfcc;
+    color: #ffffff;
+    padding: 25px 50px;
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
