@@ -31,6 +31,8 @@ main {
 }
 
 .gridcontainer {
+    padding: 3%;
+    margin: auto;
     display: grid;
     grid-template-columns: auto auto;
 }
