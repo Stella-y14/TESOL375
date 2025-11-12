@@ -30,12 +30,26 @@ main {
     border: thick solid black;
 }
 
+.gridcontainer {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
 footer {
     background-color: #c0dfcc;
     color: #ffffff;
     padding: 25px 50px;
-    margin-top: 200px;
+    margin-top: 150px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+footer a {
+    background-color: #c0dfcc;
+    color: white;
+}
+
+footer p {
+    background-color: #c0dfcc;
 }
