@@ -2,7 +2,6 @@
     background-color: rgb(95, 129, 73);
 }
 
-
 a {
     display: inline;
     text-decoration: none;
@@ -24,6 +23,47 @@ nav a {
     border: thin solid black;
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown:hover .dropbtn {
+    color: #ffffff;
+    background-color: #61f4d4; 
+}
+
+/* Dropdown Content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 120px;
+    margin-top: 1em;
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease;
+}
+
+/* Show the dropdown menu when hovering */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown Hover */
+.dropdown-content a:hover {
+    background-color: aquamarine;
+    color: white;
+}
 
 main {
     margin: 2em;
