@@ -3,38 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESOL Portfolio - About</title>
     <link rel="stylesheet" href="index.css">
-    <title>Teaching Profile</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <div class="dropdown">
-                <a href="attribute.html" class="dropbtn">Attribute</a>
-                <div class="dropdown-content">
-                    <a href="#">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">7</a>
-                    <a href="#">8</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <div class="gridcontainer">
-            simple profile and hover with 
-            this is for resume and experience
+    <!-- Navbar -->
+    <nav>
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="about.html">About &#9662;</a>
+                <ul class="dropdown-content">
+                    <li><a href="about.html#resume" data-tab="resume">Resume</a></li>
+                    <li><a href="about.html#experience" data-tab="experience">Experience</a></li>
+                </ul>
+            </li>
+            <li><a href="attributes.html">Attributes</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Tabs -->
+    <section class="section">
+        <div class="tabs">
+            <button class="tab-link active" data-tab="resume">Resume</button>
+            <button class="tab-link" data-tab="experience">Experience</button>
         </div>
-    </main>
+
+        <div class="tab-content" id="resume">
+            <h2>Resume</h2>
+            <p>Insert your education, certifications, and other resume details here.</p>
+        </div>
+
+        <div class="tab-content" id="experience" style="display:none;">
+            <h2>Experience</h2>
+            <p>Insert your teaching experience: schools, courses, teaching hours, etc.</p>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; Dain Yoon</p>
-        <a href="#">Contact</a>
+        <p>© 2025 [Your Name]. All rights reserved.</p>
+        <p>Contact: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
     </footer>
+
+    <script>
+        // Tab functionality
+        const tabLinks = document.querySelectorAll('.tab-link');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = link.dataset.tab;
+
+                // Hide all tab contents
+                tabContents.forEach(content => content.style.display = 'none');
+
+                // Remove active class from all links
+                tabLinks.forEach(l => l.classList.remove('active'));
+
+                // Show target tab and set active class
+                document.getElementById(target).style.display = 'block';
+                link.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
