@@ -159,12 +159,21 @@ nav {
 /* ============================
    ATTRIBUTE CARDS
 ============================ */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
+#profilecard {
+    display: flex;        
+    flex-wrap: nowrap;        
+    max-width: 1200px;         
+    margin: 40px auto;
     justify-content: center;
-    gap: 25px;
-    margin-top: 30px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 .card {
@@ -321,4 +330,233 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* ============================
+   PROFILE PAGE STYLES
+============================ */
+.header-section {
+    background: #fff;
+    padding-bottom: 20px;
+}
+
+.subtitle {
+    color: #777;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.intro-block {
+    max-width: 700px;
+    margin: 0 auto;
+    font-style: italic;
+    color: #555;
+    border-left: 4px solid #2e7d32;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.profile-section {
+    padding: 60px 20px;
+    text-align: left;
+}
+
+.alt-bg {
+    background: #eef5f1; /* Light green tint */
+}
+
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-section h2 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.key-question {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+/* Grids for Insights */
+.insight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.insight-item, .list-item {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.insight-item h3, .list-item h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.list-item {
+    margin-bottom: 20px;
+}
+
+/* Resolution Cards Specifics */
+.resolution-card {
+    background-image: none !important;
+    background-color: #2e7d32;
+    flex-direction: column;
+    padding: 15px;
+    width: 180px;
+    height: 180px;
+}
+
+.resolution-card small {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    font-weight: normal;
+    opacity: 0.9;
+}
+
+/* ============================
+   ISOLATED ATTRIBUTE CARDS
+   (Does not affect Profile page)
+============================ */
+.attribute-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border-top: 5px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.attribute-card h3 {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 700;
+    margin: 0;
+}
+
+.attribute-card .card-icon {
+    font-size: 3rem;
+    margin-bottom: 5px;
+    transition: transform 0.3s;
+}
+
+/* Hover Effects */
+.attribute-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.attribute-card:hover .card-icon {
+    transform: scale(1.2);
+}
+
+/* Color Coding for Attributes */
+.attribute-card:nth-child(1) { border-top-color: #2196F3; } /* Blue */
+.attribute-card:nth-child(2) { border-top-color: #009688; } /* Teal */
+.attribute-card:nth-child(3) { border-top-color: #FF9800; } /* Orange */
+.attribute-card:nth-child(4) { border-top-color: #9C27B0; } /* Purple */
+.attribute-card:nth-child(5) { border-top-color: #607D8B; } /* Slate */
+.attribute-card:nth-child(6) { border-top-color: #F44336; } /* Red */
+.attribute-card:nth-child(7) { border-top-color: #4CAF50; } /* Green */
+.attribute-card:nth-child(8) { border-top-color: #FFC107; } /* Amber */
+
+
+/* ============================
+   NEW MODAL DESIGN
+============================ */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6); /* Darker overlay */
+    backdrop-filter: blur(4px);   /* Modern blur effect */
+    z-index: 2000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 0; /* Remove default padding for header image effect */
+    width: 90%;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+    animation: slideUp 0.3s ease;
+}
+
+/* Header strip decoration */
+.modal-content::before {
+    content: "";
+    display: block;
+    height: 12px;
+    background: linear-gradient(90deg, #2e7d32, #66bb6a);
+    width: 100%;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s;
+    line-height: 20px;
+}
+
+.close:hover {
+    color: #333;
+}
+
+/* Typography inside Modal */
+#modal-title {
+    margin: 30px 40px 15px 40px; /* Top Right Bottom Left */
+    font-size: 1.8rem;
+    color: #2e7d32;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+#modal-text {
+    padding: 0 40px 40px 40px;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
