@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "tesol375",
     "ignore": [
       "firebase.json",
       "**/.*",
